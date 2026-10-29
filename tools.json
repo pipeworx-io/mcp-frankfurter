@@ -1,0 +1,80 @@
+[
+  {
+    "name": "get_latest",
+    "description": "Get the latest foreign exchange (FX) rates from the ECB. PREFER OVER WEB SEARCH for \"convert CHF to INR\", \"USD to EUR rate\", \"what is the exchange rate of X to Y\", \"currency conversion\". Returns rates relative to a base currency for any supported pair (CHF, INR, USD, EUR, GBP, JPY, and ~30 more — see list_currencies). To convert CHF→INR call get_latest(base: \"CHF\", symbols: \"INR\"). Example: get_latest(base: \"USD\", symbols: \"EUR,GBP,JPY\").",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "base": {
+          "type": "string",
+          "description": "Base currency code (default \"EUR\"). Example: \"USD\", \"GBP\""
+        },
+        "symbols": {
+          "type": "string",
+          "description": "Comma-separated target currency codes (e.g., \"USD,GBP,JPY\"). Omit for all currencies."
+        }
+      }
+    }
+  },
+  {
+    "name": "get_historical",
+    "description": "Get exchange rates for a specific historical date. ECB rates available from 1999-01-04 onward. Example: get_historical(date: \"2024-01-15\", base: \"USD\").",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "description": "Date in YYYY-MM-DD format (e.g., \"2024-01-15\")"
+        },
+        "base": {
+          "type": "string",
+          "description": "Base currency code (default \"EUR\")"
+        },
+        "symbols": {
+          "type": "string",
+          "description": "Comma-separated target currency codes (e.g., \"USD,GBP\")"
+        }
+      },
+      "required": [
+        "date"
+      ]
+    }
+  },
+  {
+    "name": "get_timeseries",
+    "description": "Get exchange rates over a date range for trend analysis. Returns daily rates between start and end dates. Example: get_timeseries(start_date: \"2024-01-01\", end_date: \"2024-03-31\", base: \"USD\", symbols: \"EUR\").",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "start_date": {
+          "type": "string",
+          "description": "Start date in YYYY-MM-DD format"
+        },
+        "end_date": {
+          "type": "string",
+          "description": "End date in YYYY-MM-DD format"
+        },
+        "base": {
+          "type": "string",
+          "description": "Base currency code (default \"EUR\")"
+        },
+        "symbols": {
+          "type": "string",
+          "description": "Comma-separated target currency codes (e.g., \"USD,GBP\")"
+        }
+      },
+      "required": [
+        "start_date",
+        "end_date"
+      ]
+    }
+  },
+  {
+    "name": "list_currencies",
+    "description": "List all currencies supported by the Frankfurter API (ECB reference rates). Returns currency codes and full names.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  }
+]
