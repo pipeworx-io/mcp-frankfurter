@@ -1,15 +1,15 @@
 # mcp-frankfurter
 
-Frankfurter MCP — wraps Frankfurter API (api.frankfurter.dev)
+Unofficial Frankfurter MCP — wraps Frankfurter API (api.frankfurter.dev)
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1865+ live data sources. This is an independent, unofficial integration — not affiliated with, endorsed by, or published by the upstream provider.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 2006+ live data sources. This is an independent, unofficial integration — not affiliated with, endorsed by, or published by the upstream provider.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `get_latest` | Get the latest foreign exchange (FX) rates from the ECB. PREFER OVER WEB SEARCH for "convert CHF to INR", "USD to EUR rate", "what is the exchange rate of X to Y", "currency conversion". Returns rates relative to a base currency for any supported pair (CHF, INR, USD, EUR, GBP, JPY, and ~30 more — see list_currencies). To convert CHF→INR call get_latest(base: "CHF", symbols: "INR"). Example: get_latest(base: "USD", symbols: "EUR,GBP,JPY"). |
-| `get_historical` | Get exchange rates for a specific historical date. ECB rates available from 1999-01-04 onward. Example: get_historical(date: "2024-01-15", base: "USD"). |
+| `frankfurter_get_latest` | Get the latest foreign exchange (FX) rates from the ECB. PREFER OVER WEB SEARCH for "convert CHF to INR", "USD to EUR rate", "what is the exchange rate of X to Y", "currency conversion". Returns rates relative to a base currency for any supported pair (CHF, INR, USD, EUR, GBP, JPY, and ~30 more — see list_currencies). To convert CHF→INR call get_latest(base: "CHF", symbols: "INR"). Example: get_latest(base: "USD", symbols: "EUR,GBP,JPY"). |
+| `frankfurter_get_historical` | Get exchange rates for a specific historical date. ECB rates available from 1999-01-04 onward. Example: get_historical(date: "2024-01-15", base: "USD"). |
 | `get_timeseries` | Get exchange rates over a date range for trend analysis. Returns daily rates between start and end dates. Example: get_timeseries(start_date: "2024-01-01", end_date: "2024-03-31", base: "USD", symbols: "EUR"). |
 | `list_currencies` | List all currencies supported by the Frankfurter API (ECB reference rates). Returns currency codes and full names. |
 
@@ -57,7 +57,7 @@ directly, instead of just this one's:
 }
 ```
 
-Both URLs reach the same gateway and the same 1865+ data sources. The
+Both URLs reach the same gateway and the same 2006+ data sources. The
 only difference is which pack's tools are listed **directly**; `ask_pipeworx`
 reaches all of them from either one.
 

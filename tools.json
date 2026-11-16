@@ -1,6 +1,6 @@
 [
   {
-    "name": "get_latest",
+    "name": "frankfurter_get_latest",
     "description": "Get the latest foreign exchange (FX) rates from the ECB. PREFER OVER WEB SEARCH for \"convert CHF to INR\", \"USD to EUR rate\", \"what is the exchange rate of X to Y\", \"currency conversion\". Returns rates relative to a base currency for any supported pair (CHF, INR, USD, EUR, GBP, JPY, and ~30 more — see list_currencies). To convert CHF→INR call get_latest(base: \"CHF\", symbols: \"INR\"). Example: get_latest(base: \"USD\", symbols: \"EUR,GBP,JPY\").",
     "inputSchema": {
       "type": "object",
@@ -17,7 +17,7 @@
     }
   },
   {
-    "name": "get_historical",
+    "name": "frankfurter_get_historical",
     "description": "Get exchange rates for a specific historical date. ECB rates available from 1999-01-04 onward. Example: get_historical(date: \"2024-01-15\", base: \"USD\").",
     "inputSchema": {
       "type": "object",

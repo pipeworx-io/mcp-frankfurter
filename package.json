@@ -1,7 +1,7 @@
 {
   "name": "@pipeworx/mcp-frankfurter",
-  "version": "0.2.1",
-  "description": "Frankfurter MCP — wraps Frankfurter API (api.frankfurter.dev)",
+  "version": "0.2.2",
+  "description": "Unofficial Frankfurter MCP — wraps Frankfurter API (api.frankfurter.dev)",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "frankfurter",
     "gatewaySlug": "frankfurter",
-    "sourceHash": "v1-fbfaad5c1bff5cc1a7812ed09613027acb4775112453f98a76e1f3ce62a5593d",
-    "sourceCommit": "030233f6b150a38a44421f88a5fcbad123f0fea8"
+    "sourceHash": "v1-9227337f5fc36a15b365c36deb43e1cc08eb33f468cb73c655b18b2b14542ef4",
+    "sourceCommit": "874331b0c46b151f9264bd14840631427a7721c1"
   }
 }
